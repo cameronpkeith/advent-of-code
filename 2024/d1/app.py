@@ -10,8 +10,8 @@ def read_input(file_name:str) -> tuple[list, list]:
 
 def solve_part_1(left, right) -> int:
     sum = 0
-    for pair in list(zip(left, right)):
-        sum += abs(pair[0] - pair[1])
+    for l, r in zip(left, right):
+        sum += abs(l - r)
     return sum
 
 def solve_part_2(left, right) -> int:
