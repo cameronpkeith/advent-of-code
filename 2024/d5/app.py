@@ -13,7 +13,7 @@ def read_input(file_name:str):
     return (rules, updates)
 
 
-def is_update_good(rules, update):
+def is_update_good_if_not_reorder(rules, update):
     reordered = False
     i = 0
     while i < len(update):
@@ -48,7 +48,7 @@ def solve(rules, updates) -> int:
     reordered_sum = 0
     for update in updates:
         u = update.split(',')
-        result, reordered = is_update_good(rm, u)
+        result, reordered = is_update_good_if_not_reorder(rm, u)
         if reordered:
             reordered_sum += int(u[int(len(result)/2)])
         else:
